@@ -2,7 +2,7 @@ name: inix b
 
 on:
   schedule:
-    - cron: '35 20 * * *'
+    - cron: '30 6,18 * * *'
   workflow_dispatch:
 
 permissions:
@@ -42,13 +42,13 @@ jobs:
 # Farming and deleting old cache from server
     - name: Farm and delete old cache
       run: |
-        python3 bot.py --telegram BOT_TOKEN CHAT_ID --headless --currency INR --no-images --superfast --on-finish exit  --session --skip-unusual --dont-check-for-updates --dont-check-internet
+        python3 bot.py --telegram 5999513424:AAEK53kntnBLYpFOtPx5U762B0IhS3QdOHg -1001896241167 --headless --currency INR --no-images --superfast --on-finish exit  --session --skip-unusual --dont-check-for-updates --dont-check-internet
         curl -L \
           -X DELETE \
           -H "Accept: application/vnd.github+json" \
-          -H "Authorization: Bearer your_PAT"\
+          -H "Authorization: Bearer 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"\
           -H "X-GitHub-Api-Version: 2022-11-28" \
-          https://api.github.com/repos/GIT-username/RepoName/actions/caches?key=Linux-inix-b
+          https://api.github.com/repos/Oreoo7/21inix/actions/caches?key=Linux-inix-b
 
 # uploading new updated session folder
     - name: Saving inix Session
